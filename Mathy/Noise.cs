@@ -1,6 +1,6 @@
-﻿namespace Mathy; 
+﻿namespace Mathy;
 
-public class Noise {
+public static partial class Noise {
 
 	private const int Prime1 = 198491317;
 	private const int Prime2 = 6542989;
@@ -58,7 +58,7 @@ public class Noise {
 	public static double Get3D0To1 (int x, int y, int z, uint seed = 0) {
 		return OneOverMaxUint * Get3DUint(x, y, z, seed);
 	}
-	
+
 	public static double Get4D0To1 (int x, int y, int z, int t, uint seed = 0) {
 		return OneOverMaxUint * Get4DUint(x, y, z, t, seed);
 	}

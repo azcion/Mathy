@@ -1,4 +1,4 @@
-﻿namespace Mathy; 
+﻿namespace Mathy;
 
 /// <summary>
 /// A PRNG implementation using noise.
@@ -13,12 +13,12 @@ public class Rand {
 	}
 
 	public uint Seed { get; }
-	
+
 	private static int NextPosition => _position++;
 	private static int _position;
 
 	public Rand () : this(0, State.NextSeed) { }
-	
+
 	public Rand (int startPosition, uint seed) {
 		_position = startPosition;
 		Seed = seed;
@@ -39,11 +39,11 @@ public class Rand {
 	public int NextInt (int minIncl, int maxExcl) {
 		return (int)Smooth.Lerp(minIncl, maxExcl, NextDouble());
 	}
-	
+
 	public double NextDouble () {
 		return Noise.Get1D0To1(NextPosition, Seed);
 	}
-	
+
 	public double NextDouble (double minIncl, double maxExcl) {
 		return Smooth.Lerp(minIncl, maxExcl, NextDouble());
 	}
